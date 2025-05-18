@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dwi Rohmanto - Portofolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Dwi Rohmanto</h1>
+      <p class="subtitle">Mahasiswa | Web Developer | UI/UX Enthusiast</p>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </header>
+
+  <nav>
+    <ul class="container">
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#kelebihan">Kelebihan</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <section id="tentang" class="container" data-fade>
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah seorang mahasiswa yang antusias dalam bidang pengembangan web dan desain UI/UX. Saat ini saya aktif mengembangkan berbagai proyek pribadi dan freelance untuk memperdalam keterampilan di dunia digital.</p>
+    <a href="CV-Dwi-Rohmanto.pdf" class="btn" download>Download CV</a>
+  </section>
+
+  <section id="kelebihan" class="container" data-fade>
+    <h2>Kelebihan Saya</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="coding.jpg" alt="Pengembangan Web" />
+        <h3>Pengembangan Web</h3>
+        <p>Mahir menggunakan HTML, CSS, dan JavaScript untuk membangun website yang responsif dan interaktif.</p>
+      </div>
+      <div class="card">
+        <img src="design.jpg" alt="Desain UI/UX" />
+        <h3>Desain UI/UX</h3>
+        <p>Berpengalaman menggunakan Figma untuk membuat prototipe dan desain antarmuka yang menarik dan mudah digunakan.</p>
+      </div>
+      <div class="card">
+        <img src="komunikasi.jpg" alt="Komunikasi" />
+        <h3>Komunikasi & Kolaborasi</h3>
+        <p>Mampu bekerja dalam tim, terbuka terhadap masukan, dan aktif dalam berkomunikasi saat mengerjakan proyek.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeri" class="container" data-fade>
+    <h2>Galeri Proyek</h2>
+    <div class="gallery-grid">
+      <img src="project1.jpg" alt="Proyek 1" />
+      <img src="project2.jpg" alt="Proyek 2" />
+      <img src="project3.jpg" alt="Proyek 3" />
+      <img src="project4.jpg" alt="Proyek 4" />
+    </div>
+  </section>
+
+  <section id="kontak" class="container" data-fade>
+    <h2>Kontak</h2>
+    <form action="mailto:dwirohmanto@email.com" method="post" enctype="text/plain" class="form-kontak">
+      <input type="text" name="nama" placeholder="Nama Anda" required />
+      <input type="email" name="email" placeholder="Email Anda" required />
+      <textarea name="pesan" placeholder="Tulis pesan Anda..." rows="5" required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Dwi Rohmanto. Dibuat dengan ❤</p>
+      <div class="social-media">
+        <a href="https://github.com/dwirohmanto" target="_blank" aria-label="GitHub">🐙</a>
+        <a href="https://linkedin.com/in/dwirohmanto" target="_blank" aria-label="LinkedIn">🔗</a>
+        <a href="https://twitter.com/dwirohmanto" target="_blank" aria-label="Twitter">🐦</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const elements = document.querySelectorAll("[data-fade]");
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, i * 150);
+          obs.unobserve(entry.target);
+        }
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

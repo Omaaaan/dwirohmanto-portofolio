@@ -1,0 +1,262 @@
+/* Reset dan dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #eee;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+header h1 {
+  font-size: 2rem;
+}
+header .subtitle {
+  font-size: 1rem;
+  color: #bbb;
+}
+#theme-toggle {
+  background: none;
+  border: none;
+  color: #61dafb;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+#theme-toggle:hover,
+#theme-toggle:focus {
+  color: #21a1f1;
+  outline: none;
+}
+
+/* Navigasi */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+nav ul li a {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+  text-decoration: underline;
+}
+
+/* Sections */
+section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* Grid Kelebihan */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(97, 218, 251, 0.5);
+}
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Galeri */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+/* Form Kontak */
+form.form-kontak {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+form input,
+form textarea {
+  background-color: #121212;
+  border: 1.5px solid #444;
+  border-radius: 5px;
+  padding: 0.6rem;
+  color: #eee;
+  font-size: 1rem;
+  resize: vertical;
+}
+form input:focus,
+form textarea:focus {
+  border-color: #61dafb;
+  outline: none;
+}
+form button {
+  background-color: #61dafb;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #121212;
+  cursor: pointer;
+  box-shadow: 0 5px 12px #61dafb99;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+form button:hover,
+form button:focus {
+  background-color: #21a1f1;
+  box-shadow: 0 7px 16px #21a1f188;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: #777;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+.social-media {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+.social-media a {
+  color: #61dafb;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.social-media a:hover,
+.social-media a:focus {
+  color: #21a1f1;
+}
+
+/* Animasi fade */
+[data-fade] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-fade].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Light mode override */
+body.light-mode {
+  background-color: #fefefe;
+  color: #222;
+}
+body.light-mode header .subtitle {
+  color: #555;
+}
+body.light-mode nav ul li a {
+  color: #007bff;
+}
+body.light-mode nav ul li a:hover,
+body.light-mode nav ul li a:focus {
+  color: #0056b3;
+  text-decoration: underline;
+}
+body.light-mode .card {
+  background-color: #fff;
+  color: #222;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+body.light-mode .card:hover {
+  box-shadow: 0 10px 25px rgba(97, 218, 251, 0.3);
+  transform: translateY(-8px) scale(1.03);
+}
+body.light-mode form.form-kontak {
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+body.light-mode form input,
+body.light-mode form textarea {
+  background-color: #f0f0f0;
+  border: 1.5px solid #ccc;
+  color: #222;
+}
+body.light-mode form input:focus,
+body.light-mode form textarea:focus {
+  border-color: #007bff;
+}
+body.light-mode form button {
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 5px 12px #007bff99;
+}
+body.light-mode form button:hover,
+body.light-mode form button:focus {
+  background-color: #0056b3;
+  box-shadow: 0 7px 16px #0056b388;
+}
+body.light-mode footer {
+  color: #555;
+}
+body.light-mode .social-media a {
+  color: #222;
+}
+body.light-mode .social-media a:hover,
+body.light-mode .social-media a:focus {
+  color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
